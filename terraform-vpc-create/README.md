@@ -1,24 +1,6 @@
 # Design a 3 Tier AWS VPC with NAT Gateways using Terraform
 
-## Step-01: Introduction
-- Understand about Terraform Modules
-- Create VPC using `Terraform Modules`
-- Define `Input Variables` for VPC module and reference them in VPC Terraform Module
-- Define `local values` and reference them in VPC Terraform Module
-- Create `terraform.tfvars` to load variable values by default from this file
-- Create `vpc.auto.tfvars` to load variable values by default from this file related to a VPC 
-- Define `Output Values` for VPC
-
-## Step-02: v1-vpc-module - Hardcoded Model
-### Step-02-01: How to make a decision of using the public Registry module?
-1. Understand about [Terraform Registry and Modules](https://registry.terraform.io/)
-2. We are going to use a [VPC Module](https://registry.terraform.io/modules/terraform-aws-modules/vpc/aws/latest) from Terraform Public Registry
-3. Understand about Authenticity of a module hosted on Public Terraform Registry with [HashiCorp Verified Tag](https://registry.terraform.io/modules/terraform-aws-modules/vpc/aws/latest)
-4. Review the download rate for that module
-5. Review the latest versions and [release history](https://github.com/terraform-aws-modules/terraform-aws-vpc/releases) of that module
-6. Review our feature needs when using that module and ensure if our need is satisfied use the module else use the standard terraform resource definition appraoch. 
-7. Review module inputs, outputs and dependencies too. 
-### Step-02-02: Create a VPC Module Terraform Configuration 
+### Step-01: Create a VPC Module Terraform Configuration 
 - c1-versions.tf
 - c2-generic-variables.tf
 - c3-vpc.tf
@@ -27,7 +9,7 @@
 # Create VPC Terraform Module
 module "vpc" {
   source  = "terraform-aws-modules/vpc/aws"
-  version = "2.78.0"
+  version = " "
 
   # VPC Basic Details
   name = "vpc-dev"
@@ -65,7 +47,7 @@ module "vpc" {
   }
 
   tags = {
-    Owner = "kalyan"
+    Owner = "Opeyemi"
     Environment = "dev"
   }
 
@@ -74,50 +56,6 @@ module "vpc" {
   }
 }
 ```
-
-## Step-03: Execute Terraform Commands
-```t
-# Working Folder
-terraform-manifests/v1-vpc-module
-
-# Terraform Initialize
-terraform init
-Observation:
-1. Verify if modules got downloaded to .terraform folder
-
-# Terraform Validate
-terraform validate
-
-# Terraform plan
-terraform plan
-
-# Terraform Apply
-terraform apply -auto-approve
-Observation:
-1) Verify VPC
-2) Verify Subnets
-3) Verify IGW
-4) Verify Public Route for Public Subnets
-5) Verify no public route for private subnets
-6) Verify NAT Gateway and Elastic IP for NAT Gateway
-7) Verify NAT Gateway route for Private Subnets
-8) Verify no public route or no NAT Gateway route to Database Subnets
-9) Verify Tags
-
-# Terraform Destroy
-terraform destroy -auto-approve
-
-# Delete Files
-rm -rf .terraform*
-rm -rf terraform.tfstate*
-```
-
-## Step-04: Version Constraints in Terraform with Modules
-- [Terraform Version Constraints](https://www.terraform.io/docs/language/expressions/version-constraints.html)
-- For modules locking to the exact version is recommended to ensure there will not be any major breakages in production
-- When depending on third-party modules, require specific versions to ensure that updates only happen when convenient to you
-- For modules maintained within your organization, specifying version ranges may be appropriate if semantic versioning is used consistently or if there is a well-defined release process that avoids unwanted updates.
-- [Review and understand this carefully](https://www.terraform.io/docs/language/expressions/version-constraints.html#terraform-core-and-provider-versions)
 
 ## Step-05: v2-vpc-module-standardized - Standardized and Generalized
 - In the next series of steps we are going to standardize the VPC configuration
@@ -345,39 +283,4 @@ vpc_single_nat_gateway = true
 
 
 ## Step-12: Execute Terraform Commands
-```t
-# Working Folder
-terraform-manifests/v2-vpc-module-standardized
 
-# Terraform Initialize
-terraform init
-
-# Terraform Validate
-terraform validate
-
-# Terraform plan
-terraform plan
-
-# Terraform Apply
-terraform apply -auto-approve
-Observation:
-1) Verify VPC
-2) Verify Subnets
-3) Verify IGW
-4) Verify Public Route for Public Subnets
-5) Verify no public route for private subnets
-6) Verify NAT Gateway and Elastic IP for NAT Gateway
-7) Verify NAT Gateway route for Private Subnets
-8) Verify no public route or no NAT Gateway route to Database Subnets
-9) Verify Tags
-```
-
-## Step-13: Clean-Up
-```t
-# Terraform Destroy
-terraform destroy -auto-approve
-
-# Delete Files
-rm -rf .terraform*
-rm -rf terraform.tfstate*
-```
