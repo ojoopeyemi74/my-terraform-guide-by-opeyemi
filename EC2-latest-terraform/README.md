@@ -1,3 +1,4 @@
+```
 # EC2 latest version module
 
 module "private-ec2-instance" {
@@ -35,3 +36,5 @@ output "ec2-private-ip-1" {
 output "ec2-private-id-1" {
   value = [for instance in module.private-ec2-instance: instance.id]
 }
+
+```
