@@ -24,9 +24,9 @@ depends_on = [module.vpc ]
 
 }
 
+```
 
-
-
+```
 ## EC2 Output
 
 output "ec2-private-ip-1" {
