@@ -1,0 +1,6 @@
+VPC created on date and VPC ID: vpc-0ec7d740c7c70faa9
+VPC created on date and VPC ID: vpc-0222848a2004736f0
+VPC created on Sun Mar 5 07:59:05 GMT 2023 and VPC ID: vpc-03f7d60973d1c5e35
+VPC created on Mon Mar 6 08:22:54 GMT 2023 and VPC ID: vpc-043370c3ad2c1b08a
+VPC created on Mon Mar 6 14:11:12 GMT 2023 and VPC ID: vpc-0131419aa28562c5f
+VPC created on Mon Mar 6 17:12:40 GMT 2023 and VPC ID: vpc-0df90e30888daf2a6
