@@ -1,0 +1,12 @@
+VPC created on date and VPC ID: vpc-0ec7d740c7c70faa9
+VPC created on date and VPC ID: vpc-0222848a2004736f0
+VPC created on Sun Mar 5 07:59:05 GMT 2023 and VPC ID: vpc-03f7d60973d1c5e35
+VPC created on Mon Mar 6 08:22:54 GMT 2023 and VPC ID: vpc-043370c3ad2c1b08a
+VPC created on Mon Mar 6 14:11:12 GMT 2023 and VPC ID: vpc-0131419aa28562c5f
+VPC created on Mon Mar 6 17:12:40 GMT 2023 and VPC ID: vpc-0df90e30888daf2a6
+VPC created on Tue Mar 7 06:04:09 GMT 2023 and VPC ID: vpc-040a5205c73f69b20
+VPC created on Tue Mar 7 07:51:16 GMT 2023 and VPC ID: vpc-01c30ab274de74b60
+VPC created on Tue Mar 7 08:23:56 GMT 2023 and VPC ID: vpc-0489edf0f8b1d8e6f
+VPC created on Wed Mar 8 08:26:12 GMT 2023 and VPC ID: vpc-0dec1ef11e530e5c8
+VPC created on Thu Mar 9 09:18:33 GMT 2023 and VPC ID: vpc-0984275e91c464892
+VPC created on Fri Mar 10 04:38:05 GMT 2023 and VPC ID: vpc-0ddeb852ed6fe40bd
